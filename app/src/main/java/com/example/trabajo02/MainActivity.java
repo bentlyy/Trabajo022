@@ -23,11 +23,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sumar(View v) {
-        String s1=et1.getText().toString();
-        String s2=et2.getText().toString();
-        int v1=Integer.parseInt(s1);
-        int v2=Integer.parseInt(s2);
-        int suma=v1+v2;
-        tv1.setText("la suma es:"+suma);
+        try {
+            String s1 = et1.getText().toString();
+            String s2 = et2.getText().toString();
+            int v1 = Integer.parseInt(s1);
+            int v2 = Integer.parseInt(s2);
+            int suma = v1 + v2;
+            tv1.setText("la suma es:" + suma);
+        } catch (NumberFormatException exception) {
+            tv1.setText("Error");
+        }
+    }
+
+    public void multiplicar(View v) {
+        try {
+            String s1 = et1.getText().toString();
+            String s2 = et2.getText().toString();
+            int v1 = Integer.parseInt(s1);
+            int v2 = Integer.parseInt(s2);
+            int multiplicar = v1 * v2;
+            tv1.setText("la multiplicacion:" + multiplicar);
+        }catch (NumberFormatException exception){
+            tv1.setText("Error");
+        }
     }
 }
